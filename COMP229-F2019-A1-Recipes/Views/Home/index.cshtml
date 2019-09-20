@@ -1,7 +1,29 @@
 ﻿
 @{
-    ViewData["Title"] = "index";
+    Layout = null;
 }
 
-<h1>index</h1>
+<!DOCTYPE html>
 
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Recipes</title>
+    <link rel="stylesheet" href="/lib/boostrap/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="text-center">
+        <h1>Best Recipes</h1>
+        <h2>
+            @ViewBag.Greeting Cookers!
+        </h2>
+        <h3>Welcome to the best recipes list you have ever seen!</h3>
+
+        <a class="btn btn-primary" asp-action="Index">Home</a>
+        <a class="btn btn-primary" asp-action="RecipeList">Recipe List</a>
+        <a class="btn btn-primary" asp-action="AddRecipe">Add</a>
+        <a class="btn btn-primary" asp-action="ViewRecipe">View</a>
+        <a class="btn btn-primary" asp-action="ReviewRecipe">Review</a>
+    </div>
+</body>
+</html>

@@ -13,6 +13,26 @@ namespace COMP229_F2019_A1_Recipes.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
+            int hour = DateTime.Now.Hour;
+            ViewBag.Greeting = hour < 12 ? "Good Morning" : "Good Afternoon";
+
+            return View();
+        }
+
+        public ViewResult RecipeList()
+        {
+            return View();
+        }
+        public ViewResult AddRecipe()
+        {
+            return View();
+        }
+        public ViewResult ViewRecipe()
+        {
+            return View();
+        }
+        public ViewResult ReviewRecipe()
+        {
             return View();
         }
     }
