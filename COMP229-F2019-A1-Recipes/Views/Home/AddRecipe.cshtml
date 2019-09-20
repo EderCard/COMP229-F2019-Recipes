@@ -1,4 +1,4 @@
-﻿
+﻿@model COMP229_F2019_A1_Recipes.Models.Recipe 
 @{
     Layout = null;
 }
@@ -10,9 +10,54 @@
     <meta name="viewport" content="width=device-width" />
     <title>AddRecipe</title>
     <link rel="stylesheet" href="/lib/boostrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body>
-    <h1>Add Recipe</h1>
-    <a class="btn btn-primary" asp-action="Index">Home</a>
+    <div id="allPage">
+        <header class="text-center">
+            <h1>Best Recipes</h1>
+            <h2>Add another delicious here</h2>
+            <a class="btn btn-outline-primary" asp-action="Index">Home</a>
+            <a class="btn btn-outline-primary" asp-action="RecipeList">Recipe List</a>
+            <a class="btn btn-primary" asp-action="AddRecipe">Add</a>
+            <a class="btn btn-outline-primary" asp-action="ViewRecipe">View</a>
+            <a class="btn btn-outline-primary" asp-action="ReviewRecipe">Review</a>
+        </header>
+
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                <form class="p-3" asp-action="AddRecipe" method="post">
+                    <div asp-validation-summary="All"></div>
+
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input class="form-control" asp-for="Name" />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Description">Description</label>
+                        <textarea class="form-control" rows="3" asp-for="Description"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="Ingredients">Ingredients</label>
+                            <textarea class="form-control" rows="8" asp-for="Ingredients"></textarea>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="HowToCook">How to cook</label>
+                            <textarea class="form-control" rows="8" asp-for="HowToCook"></textarea>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <button class="btn btn-primary" type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
 </body>
 </html>
