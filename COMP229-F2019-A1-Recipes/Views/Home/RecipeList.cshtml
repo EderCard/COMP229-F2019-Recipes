@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<COMP229_F2019_A1_Recipes.Models.Recipe>
 @{
     Layout = null;
 }
@@ -17,16 +17,32 @@
         <header class="text-center">
             <h1>Best Recipes</h1>
             <h2>Take a look on your recipe list</h2>
-
-
             <a class="btn btn-outline-primary" asp-action="Index">Home</a>
             <a class="btn btn-primary" asp-action="RecipeList">Recipe List</a>
-            <a class="btn btn-outline-primary" asp-action="AddRecipe">Add</a>
             <a class="btn btn-outline-primary" asp-action="ViewRecipe">View</a>
             <a class="btn btn-outline-primary" asp-action="ReviewRecipe">Review</a>
+            <a class="btn btn-outline-primary" asp-action="AddRecipe">Add</a>
         </header>
-
-
+        <br />
+        <table class="table table-sm table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Recipe r in Model)
+                {
+                    <tr>
+                        <td>@r.Id</td>
+                        <td>@r.Name</td>
+                        <td>@r.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
 
 
 

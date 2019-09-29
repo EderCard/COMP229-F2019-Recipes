@@ -19,9 +19,9 @@
             <h2>Add another delicious here</h2>
             <a class="btn btn-outline-primary" asp-action="Index">Home</a>
             <a class="btn btn-outline-primary" asp-action="RecipeList">Recipe List</a>
-            <a class="btn btn-primary" asp-action="AddRecipe">Add</a>
             <a class="btn btn-outline-primary" asp-action="ViewRecipe">View</a>
             <a class="btn btn-outline-primary" asp-action="ReviewRecipe">Review</a>
+            <a class="btn btn-primary" asp-action="AddRecipe">Add</a>
         </header>
 
         <div class="panel panel-success">
@@ -50,6 +50,12 @@
                             <textarea class="form-control" rows="8" asp-for="HowToCook"></textarea>
                         </div>
                     </div>
+                    <div class="custom-file">
+                        <label class="custom-file-label" asp-for="Picture">Choose picture file</label>
+                        <input type="file" class="custom-file-input" asp-for="Picture">
+
+                    </div>
+                    <br /><br />
                     <div class="text-right">
                         <button class="btn btn-primary" type="submit">Save</button>
                     </div>
