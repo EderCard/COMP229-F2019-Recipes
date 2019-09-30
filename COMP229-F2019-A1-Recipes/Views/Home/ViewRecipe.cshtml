@@ -1,4 +1,4 @@
-﻿
+﻿@model  Recipe
 @{
     Layout = null;
 }
@@ -23,6 +23,45 @@
             <a class="btn btn-outline-primary" asp-action="ReviewRecipe">Review</a>
             <a class="btn btn-outline-primary" asp-action="AddRecipe">Add</a>
         </header>
+
+       
+        <div class="panel panel-success">
+            <div class="panel-body">
+
+                <form class="p-3" asp-action="AddRecipe" method="post">
+                    <div asp-validation-summary="All"></div>
+
+                    <div class="form-group">
+                        <label asp-for="Category">Category</label>
+                        <input class="form-control" disabled="disabled" asp-for="Category" value="Dessert">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="Name">Name</label>
+                        <input class="form-control" disabled="disabled" asp-for="Name" value="Strawberry Angel Food" />
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="Ingredients">Ingredients</label>
+                            <textarea id="comment" class="form-control" rows="8" disabled="disabled" asp-for="Ingredients">Ingredients</textarea>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="HowToCook">How to cook</label>
+                            <textarea class="form-control" rows="8" disabled="disabled" asp-for="HowToCook">HowToCook</textarea>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="custom-file-label" asp-for="Picture">Picture</label>
+                        <img src="~/images/StrawberryAgelFood.jpg" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
     </div>
 </body>
 </html>

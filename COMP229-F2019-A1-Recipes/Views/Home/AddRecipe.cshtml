@@ -1,4 +1,4 @@
-﻿@model COMP229_F2019_A1_Recipes.Models.Recipe 
+﻿@model Recipe
 @{
     Layout = null;
 }
@@ -28,16 +28,21 @@
             <div class="panel-body">
 
                 <form class="p-3" asp-action="AddRecipe" method="post">
-                    <div asp-validation-summary="All"></div>
+                   @* <div asp-validation-summary="All"></div>*@
+
+                    <div class="form-group">
+                        <label asp-for="Category">Category</label>
+                        <select class="form-control" asp-for="Category">
+                            <option value="">--Select--</option>
+                            <option value="Desserts">Desserts</option>
+                            <option value="Main Dishes">Main Dishes</option>
+                            <option value="Miscellaneous">Miscellaneous</option>
+                        </select>
+                    </div>
 
                     <div class="form-group">
                         <label asp-for="Name">Name</label>
                         <input class="form-control" asp-for="Name" />
-                    </div>
-
-                    <div class="form-group">
-                        <label asp-for="Description">Description</label>
-                        <textarea class="form-control" rows="3" asp-for="Description"></textarea>
                     </div>
 
                     <div class="form-row">
@@ -50,11 +55,13 @@
                             <textarea class="form-control" rows="8" asp-for="HowToCook"></textarea>
                         </div>
                     </div>
+
                     <div class="custom-file">
                         <label class="custom-file-label" asp-for="Picture">Choose picture file</label>
-                        <input type="file" class="custom-file-input" asp-for="Picture">
+                        <input type="file" class="custom-file-input" asp-for="Picture" id="fileToUpload" name="file">
 
                     </div>
+
                     <br /><br />
                     <div class="text-right">
                         <button class="btn btn-primary" type="submit">Save</button>
@@ -62,8 +69,6 @@
                 </form>
             </div>
         </div>
-
     </div>
-
 </body>
 </html>

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<COMP229_F2019_A1_Recipes.Models.Recipe>
+﻿@model IEnumerable<Recipe>
 @{
     Layout = null;
 }
@@ -24,29 +24,25 @@
             <a class="btn btn-outline-primary" asp-action="AddRecipe">Add</a>
         </header>
         <br />
-        <table class="table table-sm table-striped table-bordered">
-            <thead>
+        <table class="table table-sm table-bordered table-hover">
+            <thead  class="thead-light">
                 <tr>
-                    <th>Id</th>
                     <th>Name</th>
-                    <th>Description</th>
+                    <th>Category</th>
+                    <th>Rate</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody onclick="location.href='/Home/ViewRecipe'">
                 @foreach (Recipe r in Model)
                 {
-                    <tr>
-                        <td>@r.Id</td>
-                        <td>@r.Name</td>
-                        <td>@r.Description</td>
-                    </tr>
+                <tr>
+                    <td>@r.Name</td>
+                    <td>@r.Category</td>
+                    <td>@r.Rate</td>
+                </tr>
                 }
             </tbody>
         </table>
-
-
-
-
     </div>
 </body>
 </html>
