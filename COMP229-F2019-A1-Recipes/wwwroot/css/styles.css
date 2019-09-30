@@ -5,5 +5,10 @@
     margin-left: auto;
     background-color: ghostwhite;
 }
+p {
+    background-color: #e9ecef;
+    border-radius: 5px;
+    border-color: #ced4da;
+}
 
 

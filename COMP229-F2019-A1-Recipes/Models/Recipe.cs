@@ -13,7 +13,7 @@ namespace COMP229_F2019_A1_Recipes.Models
         public String Ingredients { get; set; }
         public String HowToCook { get; set; }
         public String Picture { get; set; }
-        public int Rate { get; set; }
+        public double Rate { get; set; }
         public String Comment { get; set; }
     }
 

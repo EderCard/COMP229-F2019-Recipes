@@ -32,7 +32,7 @@ namespace COMP229_F2019_A1_Recipes.Models
                     "Stir ground beef, ricotta cheese, parsley, egg, kosher salt, black pepper, and cayenne pepper with onion mixture until almost combined; stir in bread crumbs and continue to mix until thoroughly blended.\n" +
                     "Roll about 2 tablespoons of mixture into a 1-inch ball for each meatball. Pour 2 tablespoons olive oil in same skillet used to cook onions. Place skillet over medium heat and brown meatballs on all sides in hot oil, about 5 minutes. Hold a crumpled paper towel in a tongs and use it to remove excess grease from skillet.\n" +
                     "Pour marinara sauce and water over meatballs in skillet. Stir to combine and bring to a simmer. Reduce heat to medium-low and simmer, stirring occasionally, until meatballs are cooked through and no longer pink in the center, about 30 minutes.",
-                    Rate = 4
+                    Rate = 4.5
                 },
                 new Recipe
                 {
@@ -51,7 +51,7 @@ namespace COMP229_F2019_A1_Recipes.Models
                     HowToCook = "Preheat an oven to 350 degrees F (175 degrees C).\n" +
                     "Place halibut fillets on a large sheet of aluminum foil and season with Greek seasoning. Combine tomato, onion, olives, capers, olive oil, lemon juice, salt, and pepper in a bowl. Spoon tomato mixture over the halibut. Carefully seal all the edges of the foil to create a large packet. Place the packet on a baking sheet.\n" +
                     "Bake in the preheated oven until the fish flakes easily with a fork, 30 to 40 minutes.",
-                    Rate = 5
+                    Rate = 4.8
                 },
                 new Recipe
                 {
@@ -67,7 +67,7 @@ namespace COMP229_F2019_A1_Recipes.Models
                     "Place eggs and cracker crumbs in two separate shallow bowls. Mix cracker crumbs with garlic salt and pepper. Dip chicken in the eggs, then dredge in the crumb mixture to coat.\n" +
                     "Arrange coated chicken in a 9x13 inch baking dish. Place pieces of butter around the chicken.\n" +
                     "Bake in the preheated oven for 40 minutes, or until chicken is no longer pink and juices run clear.",
-                    Rate = 4
+                    Rate = 4.2
                 },
                 new Recipe
                 {
@@ -82,7 +82,7 @@ namespace COMP229_F2019_A1_Recipes.Models
                     HowToCook = "Crumble the cake into a 9x13 inch dish.\n" +
                     "Beat the cream cheese and sugar in a medium bowl until light and fluffy. Fold in whipped topping. Mash the cake down with your hands and spread the cream cheese mixture over the cake.\n" +
                     "In a bowl, combine strawberries and glaze until strawberries are evenly coated. Spread over cream cheese layer. Chill until serving.",
-                    Rate = 5
+                    Rate = 4.9
                 }
         };
         /// <summary>
