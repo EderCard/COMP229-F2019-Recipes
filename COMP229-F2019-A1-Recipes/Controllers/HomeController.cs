@@ -34,8 +34,6 @@ namespace COMP229_F2019_A1_Recipes.Controllers
             if (ModelState.IsValid)
             {
                 Repository.AddRecipe(recipe);
-                //return View("RecipeList");
-                //return View("RecipeList", recipe);
                 return View("AddRecipe", recipe);
             }
             else
@@ -79,7 +77,7 @@ namespace COMP229_F2019_A1_Recipes.Controllers
         public ViewResult ReviewRecipe(Recipe recipe)
         {
             Repository.AddRate(recipe);
-            return View("RecipeList", recipe);
+            return View("ReviewRecipe", recipe);
         }
     }
 }
