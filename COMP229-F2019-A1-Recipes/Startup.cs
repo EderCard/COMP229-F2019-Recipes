@@ -30,6 +30,11 @@ namespace COMP229_F2019_A1_Recipes
             app.UseStaticFiles();
 
             app.UseMvcWithDefaultRoute();
+
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("default", "{controller=Home}/{action=ViewRecipe}/{id?}");
+            });
         }
     }
 }

@@ -12,6 +12,7 @@ namespace COMP229_F2019_A1_Recipes.Models
             {
                 new Recipe
                 {
+                    RecipeId = 1,
                     Category = "Main Dishes",
                     Name = "Ricotta Meatballs",
                     Ingredients = "1/2 onion, minced\n" +
@@ -36,6 +37,7 @@ namespace COMP229_F2019_A1_Recipes.Models
                 },
                 new Recipe
                 {
+                    RecipeId = 2,
                     Category = "Main Dishes",
                     Name = "Mediterranean Fish",
                     Ingredients = "4 (6 ounce) fillets halibut\n" +
@@ -55,6 +57,7 @@ namespace COMP229_F2019_A1_Recipes.Models
                 },
                 new Recipe
                 {
+                    RecipeId = 3,
                     Category = "Main Dishes",
                     Name = "Butter Chicken",
                     Ingredients = "2 eggs, beaten\n" +
@@ -71,6 +74,7 @@ namespace COMP229_F2019_A1_Recipes.Models
                 },
                 new Recipe
                 {
+                    RecipeId = 4,
                     Category = "Dessert",
                     Name = "Strawberry Angel Food",
                     Ingredients = "1 (10 inch) angel food cake\n" +

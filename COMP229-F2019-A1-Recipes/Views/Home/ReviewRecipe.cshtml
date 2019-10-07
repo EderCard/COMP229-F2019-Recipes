@@ -1,8 +1,6 @@
 ﻿@model  Recipe
 @{
     Layout = null;
-
-    var r = Repository.RecipeList.ToList()[3];
 }
 
 <!DOCTYPE html>
@@ -29,32 +27,46 @@
         <form class="p-3" asp-action="ReviewRecipe" method="post">
             <div asp-validation-summary="All"></div>
 
-            <div class="form-group col-md-12">
-                <label asp-for="Name">Name</label>
-                <input class="form-control" disabled="disabled" asp-for="Name" value="@r.Name" />
+            <div class="form-row">
+                <div class="form-group  col-md-1">
+                    <label asp-for="RecipeId">Id</label>
+                    <input class="form-control" disabled="disabled" asp-for="RecipeId"  />
+                </div>
+                <div class="form-group  col-md-11">
+                    <label asp-for="Name">Name</label>
+                    <input class="form-control" disabled="disabled" asp-for="Name"  />
+                </div>
             </div>
 
-            <div class="form-group col-md-3">
-                <label asp-for="Rate">Rate</label>
-                <select class="form-control" asp-for="Rate">
-                    <option value="">--Select--</option>
-                    <option value="1">1</option>
-                    <option value="2">2 </option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
+            <div class="form-row">
+                <div class="form-group col-md-10">
+                    <label asp-for="Category">Category</label>
+                    <input class="form-control"  asp-for="Category" disabled="disabled" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label asp-for="Rate">Rate</label>
+                    <select class="form-control" asp-for="Rate">
+                        <option>--Select--</option>
+                        <option>1</option>
+                        <option>2 </option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
             </div>
-            <div class="form-group col-md-12">
-                <label asp-for="Comment">Comments</label>
-                <textarea class="form-control" rows="8" asp-for="Comment"></textarea>
+
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label asp-for="Comment">Comments</label>
+                    <textarea class="form-control" rows="8" asp-for="Comment"></textarea>
+                </div>
             </div>
+
             <br />
             <div class="text-right">
                 <button class="btn btn-primary" type="submit">Save</button>
             </div>
-
-
         </form>
     </div>
 </body>

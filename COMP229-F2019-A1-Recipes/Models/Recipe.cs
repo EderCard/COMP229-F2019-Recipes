@@ -8,6 +8,7 @@ namespace COMP229_F2019_A1_Recipes.Models
 {
     public class Recipe
     {
+        public int RecipeId { get; set; }
         public String Category{ get; set; }
         public String Name { get; set; }
         public String Ingredients { get; set; }

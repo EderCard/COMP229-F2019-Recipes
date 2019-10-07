@@ -54,19 +54,26 @@ namespace COMP229_F2019_A1_Recipes.Controllers
         /// This method return ViewRecipe view (GET)
         /// </summary>
         /// <returns></returns>
-  
+     
         public ViewResult ViewRecipe()
         {
-            return View();
-        }
+            return View(
+                // hardcode to return one element to the form
+                Repository.RecipeList.ToList()[3]
+                );
+    }
         /// <summary>
         /// This method returns ReviewRecipe view (GET)
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ViewResult ReviewRecipe()
+        public ViewResult ReviewRecipe(int RecipeId)
         {
-            return View();
+            
+            return View(
+                // hardcode to return one element to the form
+                Repository.RecipeList.ToList()[RecipeId]
+                );
         }
         /// <summary>
         /// This method is used to save a recipe revien into ReviewRecipe (POST)
