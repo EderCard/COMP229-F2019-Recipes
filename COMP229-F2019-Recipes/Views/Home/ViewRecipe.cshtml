@@ -1,6 +1,7 @@
 ﻿@model Recipe
 @{
     Layout = null;
+
 }
 
 <!DOCTYPE html>
@@ -19,8 +20,6 @@
             <h2>Seel all details of this delicious</h2>
             <a class="btn btn-outline-primary" asp-action="Index">Home</a>
             <a class="btn btn-outline-primary" asp-action="RecipeList">Recipe List</a>
-            <a class="btn btn-primary" asp-action="ViewRecipe">View</a>
-            <a class="btn btn-outline-primary" asp-action="ReviewRecipe">Review</a>
             <a class="btn btn-outline-primary" asp-action="AddRecipe">Add</a>
         </header>
 
@@ -44,11 +43,11 @@
                     <div class="form-row">
                         <div class="form-group col-md-10">
                             <label asp-for="Category">Category</label>
-                            <input class="form-control" disabled="disabled" asp-for="Category"  />
+                            <input class="form-control" disabled="disabled" asp-for="Category" />
                         </div>
                         <div class="form-group col-md-2">
                             <label asp-for="Rate">Rate</label>
-                            <input class="form-control" disabled="disabled" asp-for="Rate"  />
+                            <input class="form-control" disabled="disabled" asp-for="Rate" />
                         </div>
                     </div>
 
@@ -62,10 +61,9 @@
                             <textarea class="form-control" rows="10" disabled="disabled" asp-for="HowToCook"></textarea>
                         </div>
                     </div>
-
-                    <div>
+                    @*<div>
                         <img src="~/images/StrawberryAgelFood.jpg" width="465" height="305" />
-                    </div>
+                    </div>*@
                 </form>
             </div>
         </div>

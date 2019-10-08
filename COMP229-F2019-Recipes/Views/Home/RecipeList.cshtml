@@ -19,8 +19,6 @@
             <h2>Take a look on your recipe list</h2>
             <a class="btn btn-outline-primary" asp-action="Index">Home</a>
             <a class="btn btn-primary" asp-action="RecipeList">Recipe List</a>
-            <a class="btn btn-outline-primary" asp-action="ViewRecipe">View</a>
-            <a class="btn btn-outline-primary" asp-action="ReviewRecipe">Review</a>
             <a class="btn btn-outline-primary" asp-action="AddRecipe">Add</a>
         </header>
         <br />
@@ -31,18 +29,21 @@
                     <th>Name</th>
                     <th>Category</th>
                     <th>Rate</th>
+                    <th></th>
                 </tr>
             </thead>
            
             <tbody>
                 @foreach (Recipe r in Model)
                  {
-                    <tr>
-                        <td>@r.RecipeId</td>
-                        <td>@r.Name</td>
-                        <td>@r.Category</td>
-                        <td>@r.Rate</td>
-                    </tr>
+                <tr>
+                    <td>@r.RecipeId</td>
+                    <td>@r.Name</td>
+                    <td>@r.Category</td>
+                    <td>@r.Rate</td>
+                    <td><a class="btn btn-primary" asp-action="ViewRecipe" asp-route-id=@r.RecipeId>View</a>
+                    <a class="btn btn-primary" asp-action="ReviewRecipe" asp-route-id=@r.RecipeId>Review</a></td>
+                </tr>
                  }
             </tbody>
         </table>
