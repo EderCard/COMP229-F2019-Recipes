@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace COMP229_F2019_A1_Recipes
+namespace COMP229_F2019_Recipes
 {
     public class Program
     {

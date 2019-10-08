@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 
-namespace COMP229_F2019_A1_Recipes.Models
+namespace COMP229_F2019_Recipes.Models
 {
     public class Recipe
     {

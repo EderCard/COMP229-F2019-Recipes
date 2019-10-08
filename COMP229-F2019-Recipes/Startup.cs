@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace COMP229_F2019_A1_Recipes
+namespace COMP229_F2019_Recipes
 {
     public class Startup
     {
