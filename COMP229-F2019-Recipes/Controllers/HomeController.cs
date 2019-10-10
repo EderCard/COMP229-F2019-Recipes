@@ -54,8 +54,6 @@ namespace COMP229_F2019_Recipes.Controllers
         /// This method return ViewRecipe view (GET)
         /// </summary>
         /// <returns></returns>
-
-        
         public ViewResult ViewRecipe(int id)
         {
             return View(Repository.RecipeList.ToList()[id - 1]);
