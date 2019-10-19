@@ -6,9 +6,26 @@
     background-color: ghostwhite;
 }
 p {
-    background-color: #e9ecef;
+    background-color: ghostwhite;
     border-radius: 5px;
     border-color: #ced4da;
 }
 
+footer {
+    background-color: #007BFF;
+    color: white;
+    padding: 2px;
+}
 
+#copyright {
+    color: white;
+    font-size: x-small;
+    padding-left: 2px;
+    background-color: #007BFF;
+}
+
+h1 {
+    background-color: #007BFF;
+    color: white;
+    padding: 2px;
+}
