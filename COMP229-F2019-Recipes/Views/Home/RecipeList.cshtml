@@ -16,7 +16,7 @@
                     <th>Id</th>
                     <th>Name</th>
                     <th>Category</th>
-                    <th>Rate</th>
+                    <th>Serves</th>
                     <th></th>
                 </tr>
             </thead>
@@ -24,14 +24,7 @@
             <tbody>
                 @foreach (Recipe r in Model)
                  {
-                <tr>
-                    <td>@r.RecipeId</td>
-                    <td>@r.Name</td>
-                    <td>@r.Category</td>
-                    <td>@r.Rate</td>
-                    <td><a class="btn btn-primary" asp-action="ViewRecipe" asp-route-id=@r.RecipeId>View</a>
-                    <a class="btn btn-primary" asp-action="ReviewRecipe" asp-route-id=@r.RecipeId>Review</a></td>
-                </tr>
+                    @await Html.PartialAsync("RecipeLine", r)
                  }
             </tbody>
         </table>

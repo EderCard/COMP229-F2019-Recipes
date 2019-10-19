@@ -26,15 +26,23 @@
                             <input class="form-control" asp-for="Name" />
                         </div>
                     </div>
-                        
-                    <div class="form-group">
+
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
                             <label asp-for="Category">Category</label>
-                            <select class="form-control" asp-for="Category">
-                                <option value="">--Select--</option>
-                                <option value="Desserts">Desserts</option>
-                                <option value="Main Dishes">Main Dishes</option>
-                                <option value="Miscellaneous">Miscellaneous</option>
+                            <input class="form-control" asp-for="Category" />
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label asp-for="Serves">Serves</label>
+                            <select class="form-control" asp-for="Serves">
+                                <option>--Select--</option>
+                                <option>1</option>
+                                <option>2 </option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
                             </select>
+                        </div>
                     </div>
 
                     <div class="form-row">
@@ -43,21 +51,15 @@
                             <textarea class="form-control" rows="8" asp-for="Ingredients"></textarea>
                         </div>
                         <div class="form-group col-md-6">
-                            <label asp-for="HowToCook">How to cook</label>
-                            <textarea class="form-control" rows="8" asp-for="HowToCook"></textarea>
+                            <label asp-for="Directions">Directions</label>
+                            <textarea class="form-control" rows="8" asp-for="Directions"></textarea>
                         </div>
                     </div>
-
-                    <div class="custom-file">
-                        <label class="custom-file-label" asp-for="Picture">Choose picture file</label>
-                        <input type="file" class="custom-file-input" asp-for="Picture" id="fileToUpload" name="file">
+                    <br />
+                    <div class="text-right">
+                        <button class="btn btn-primary" asp-action="Index">Cancel</button>
+                        <button class="btn btn-primary" type="submit">Save</button>
                     </div>
-
-                    <br /><br />
-                          <div class="text-right">
-                              <button class="btn btn-primary" asp-action="Index">Cancel</button>
-                              <button class="btn btn-primary" type="submit">Save</button>
-                          </div>
                 </form>
             </div>
         </div>

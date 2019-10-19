@@ -75,7 +75,7 @@ namespace COMP229_F2019_Recipes.Controllers
         [HttpPost]
         public ViewResult ReviewRecipe(Recipe recipe)
         {
-            Repository.AddRate(recipe);
+            Repository.AddReview(recipe);
             return View("ReviewRecipe", recipe);
         }
     }
