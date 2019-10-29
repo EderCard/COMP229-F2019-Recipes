@@ -109,7 +109,7 @@ namespace COMP229_F2019_Recipes.Models
         }
         public static void AddReview(Recipe review)
         {
-            recipeList.Append(review);
+            
         }
     }
 }

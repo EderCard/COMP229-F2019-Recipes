@@ -68,15 +68,14 @@ namespace COMP229_F2019_Recipes.Controllers
             return View(Repository.RecipeList.ToList()[id - 1]);
         }
         /// <summary>
-        /// This method is used to save a recipe revien into ReviewRecipe (POST)
+        /// This method is used to save a recipe review into ReviewRecipe (POST)
         /// </summary>
         /// <param name="recipe"></param>
         /// <returns></returns>
         [HttpPost]
-        public ViewResult ReviewRecipe(Recipe recipe)
+        public ViewResult ReviewRecipe()
         {
-            Repository.AddReview(recipe);
-            return View("ReviewRecipe", recipe);
+            return View("Index");
         }
     }
 }
