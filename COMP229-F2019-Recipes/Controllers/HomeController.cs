@@ -9,6 +9,13 @@ namespace COMP229_F2019_Recipes.Controllers
 {
     public class HomeController : Controller
     {
+        private IRecipeRepository repository;
+
+        public HomeController(IRecipeRepository repo)
+        {
+            repository = repo;
+        }
+
         // default action method
         public ViewResult Index()
         {
@@ -48,24 +55,28 @@ namespace COMP229_F2019_Recipes.Controllers
         [HttpGet]
         public ViewResult RecipeList()
         {
-            return View(Repository.RecipeList);
+            return View(repository.Recipes);
         }
         /// <summary>
         /// This method return ViewRecipe view (GET)
         /// </summary>
         /// <returns></returns>
-        public ViewResult ViewRecipe(int id)
+        public ViewResult ViewRecipe(int RecipeId)
         {
-            return View(Repository.RecipeList.ToList()[id - 1]);
+            return View(Repository.RecipeList
+                .Where(r => r.RecipeId == RecipeId)
+                .FirstOrDefault());
     }
         /// <summary>
         /// This method returns ReviewRecipe view (GET)
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ViewResult ReviewRecipe(int id)
+        public ViewResult ReviewRecipe(int RecipeId)
         {
-            return View(Repository.RecipeList.ToList()[id - 1]);
+            return View(Repository.RecipeList
+                .Where(r => r.RecipeId == RecipeId)
+                .FirstOrDefault());
         }
         /// <summary>
         /// This method is used to save a recipe review into ReviewRecipe (POST)

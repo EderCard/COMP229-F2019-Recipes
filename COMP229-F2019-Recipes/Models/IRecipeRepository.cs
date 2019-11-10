@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace COMP229_F2019_Recipes.Models
 {
-    public class IRecipeRepository
+    public interface IRecipeRepository
     {
         IQueryable<Recipe> Recipes { get; }
     }

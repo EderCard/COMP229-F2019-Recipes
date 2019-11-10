@@ -48,6 +48,8 @@ namespace COMP229_F2019_Recipes
             {
                 routes.MapRoute("default", "{controller=Home}/{action=ViewRecipe}/{id?}");
             });
+            
+            SeedData.EnsurePopulated(app);
         }
     }
 }
