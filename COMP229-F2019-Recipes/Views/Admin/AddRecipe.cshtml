@@ -1,0 +1,9 @@
+﻿@model Recipe
+@{
+    ViewBag.Title = "Add Recipe";
+}
+        <div class="panel panel-success">
+            <div class="panel-body">
+                @await Html.PartialAsync("AddForm")
+            </div>
+        </div>

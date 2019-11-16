@@ -24,7 +24,7 @@ namespace COMP229_F2019_Recipes.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Category");
+                    b.Property<int>("Category");
 
                     b.Property<string>("Comment");
 
@@ -34,7 +34,7 @@ namespace COMP229_F2019_Recipes.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<double>("Serves");
+                    b.Property<int>("Serves");
 
                     b.HasKey("RecipeId");
 

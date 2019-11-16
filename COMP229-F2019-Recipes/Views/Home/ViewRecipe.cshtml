@@ -3,14 +3,6 @@
      ViewBag.Title = "View Recipe";
 
 }
-        <header class="text-center">
-            <h1>Best Recipes</h1>
-            <h2>Seel all details of this delicious</h2>
-            <a class="btn btn-outline-primary" asp-action="Index">Home</a>
-            <a class="btn btn-outline-primary" asp-action="RecipeList">Recipe List</a>
-            <a class="btn btn-outline-primary" asp-action="AddRecipe">Add</a>
-        </header>
-
         <div class="panel panel-success">
             <div class="panel-body">
 
@@ -20,33 +12,49 @@
                     <div class="form-row">
                         <div class="form-group  col-md-1">
                             <label asp-for="RecipeId">Id</label>
-                            <input class="form-control" disabled="disabled" asp-for="RecipeId" />
+                            <input class="form-control" asp-for="RecipeId" disabled="disabled"/>
                         </div>
                         <div class="form-group  col-md-11">
                             <label asp-for="Name">Name</label>
-                            <input class="form-control" disabled="disabled" asp-for="Name" />
+                            <input class="form-control" asp-for="Name" disabled="disabled"/>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-10">
                             <label asp-for="Category">Category</label>
-                            <input class="form-control" disabled="disabled" asp-for="Category" />
+                            <select class="form-control" asp-for="Category" disabled="disabled">
+                                <option value="">--Select--</option>
+                                <option value=1>Desserts</option>
+                                <option value=2>Main Dishes</option>
+                                <option value=3>Miscellaneous</option>
+                            </select>
                         </div>
+
                         <div class="form-group col-md-2">
                             <label asp-for="Serves">Serves</label>
-                            <input class="form-control" disabled="disabled" asp-for="Serves" />
+                            <select class="form-control" asp-for="Serves" disabled="disabled">
+                                <option value="">--Select--</option>
+                                <option value=1>1</option>
+                                <option value=2>2 </option>
+                                <option value=3>3</option>
+                                <option value=4>4</option>
+                                <option value=5>5</option>
+                                <option value=6>6</option>
+                                <option value=7>7</option>
+                                <option value=8>8</option>
+                            </select>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label asp-for="Ingredients">Ingredients</label>
-                            <textarea class="form-control" rows="10" disabled="disabled" asp-for="Ingredients"></textarea>
+                            <textarea class="form-control" rows="10" asp-for="Ingredients" disabled="disabled"></textarea>
                         </div>
                         <div class="form-group col-md-6">
                             <label asp-for="Directions">Directions</label>
-                            <textarea class="form-control" rows="10" disabled="disabled" asp-for="Directions"></textarea>
+                            <textarea class="form-control" rows="10" asp-for="Directions" disabled="disabled"></textarea>
                         </div>
                     </div>
                 </form>

@@ -13,11 +13,11 @@ namespace COMP229_F2019_Recipes.Migrations
                 {
                     RecipeId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Category = table.Column<string>(nullable: true),
+                    Category = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Ingredients = table.Column<string>(nullable: true),
                     Directions = table.Column<string>(nullable: true),
-                    Serves = table.Column<double>(nullable: false),
+                    Serves = table.Column<int>(nullable: false),
                     Comment = table.Column<string>(nullable: true)
                 },
                 constraints: table =>

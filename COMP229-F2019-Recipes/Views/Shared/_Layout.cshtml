@@ -6,14 +6,27 @@
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="/lib/boostrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/styles.css" />
+
+    <script src="/lib/jquery/jquery.min.js"></script>
+    <script src="/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
 </head>
 <body>
     <div id="allPage">
+        <header class="text-center">
+            <h1>Best Recipes</h1>
+            <h2>Welcome to the best recipes list you have ever seen!</h2>
+            <a class="btn btn-primary" asp-action="Index" asp-controller="Home">Home</a>
+            <a class="btn btn-primary" asp-action="RecipeList" asp-controller="Home">Recipe List</a>
+            <a class="btn btn-primary" asp-action="AddRecipe" asp-controller="Admin">Add</a>
+        </header>
+
         @RenderBody()
 
         <footer>
             <p id="copyright">
-                &copy;&nbsp;&nbsp;Copyright Ederson Cardoso - Comp229 - Fall 2019 - Assignment #2
+                &copy;&nbsp;&nbsp;Copyright Ederson Cardoso - Comp229 - Fall 2019 - Assignment #3
             </p>
         </footer>
     </div>

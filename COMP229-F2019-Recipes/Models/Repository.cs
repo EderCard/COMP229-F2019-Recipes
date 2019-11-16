@@ -13,7 +13,7 @@ namespace COMP229_F2019_Recipes.Models
                 new Recipe
                 {
                     RecipeId = 1,
-                    Category = "Main Dishes",
+                    Category = 2,
                     Name = "Ricotta Meatballs",
                     Ingredients = "1/2 onion, minced\n" +
                     "2 tablespoons olive oil\n" +
@@ -38,7 +38,7 @@ namespace COMP229_F2019_Recipes.Models
                 new Recipe
                 {
                     RecipeId = 2,
-                    Category = "Main Dishes",
+                    Category = 2,
                     Name = "Mediterranean Fish",
                     Ingredients = "4 (6 ounce) fillets halibut\n" +
                     "1 tablespoon Greek seasoning (such as Cavender's®)\n" +
@@ -58,7 +58,7 @@ namespace COMP229_F2019_Recipes.Models
                 new Recipe
                 {
                     RecipeId = 3,
-                    Category = "Main Dishes",
+                    Category = 2,
                     Name = "Butter Chicken",
                     Ingredients = "2 eggs, beaten\n" +
                     "1 cup crushed buttery round cracker crumbs\n" +
@@ -75,7 +75,7 @@ namespace COMP229_F2019_Recipes.Models
                 new Recipe
                 {
                     RecipeId = 4,
-                    Category = "Dessert",
+                    Category = 1,
                     Name = "Strawberry Angel Food",
                     Ingredients = "1 (10 inch) angel food cake\n" +
                     "2 (8 ounce) packages cream cheese, softened\n" +
