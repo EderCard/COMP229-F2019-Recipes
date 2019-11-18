@@ -65,7 +65,7 @@
                     }
                 </td>
                 <td>
-                    <form asp-action="DeleteRecipe" method="post" asp-controller="Admin">
+                    <form asp-action="Delete" method="post" asp-controller="Admin">
                         <input type="hidden" name="RecipeId" value="@r.RecipeId" />
                         <a class="btn btn-primary" asp-action="ViewRecipe" asp-route-RecipeId=@r.RecipeId asp-controller="Home">View</a>
                         <a class="btn btn-warning" asp-action="EditRecipe" asp-route-RecipeId=@r.RecipeId asp-controller="Admin">Edit</a>

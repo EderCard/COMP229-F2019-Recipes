@@ -50,7 +50,7 @@ namespace COMP229_F2019_Recipes.Controllers
         /// <param name="RecipeId"></param>
         /// <returns></returns>
         public ViewResult EditRecipe(int recipeId) => View(repository.Recipes
-        .FirstOrDefault(r => r.RecipeId == recipeId));
+            .FirstOrDefault(r => r.RecipeId == recipeId));
         /// <summary>
         /// This method is used to save changes on Recipe
         /// </summary>
@@ -62,7 +62,7 @@ namespace COMP229_F2019_Recipes.Controllers
             if (ModelState.IsValid)
             {
                 repository.SaveRecipe(recipe);
-                //TempData["message"] = $"{recipe.Name} has been saved!";
+                TempData["message"] = $"{recipe.Name} has been saved!";
                 return RedirectToAction("RecipeList", controllerName: "Home");
             }
             else
@@ -71,13 +71,29 @@ namespace COMP229_F2019_Recipes.Controllers
             }
         }
 
+
+
+        /// <summary>
+        /// This method returns the ReviewRecipe view
+        /// </summary>
+        /// <param name="RecipeId"></param>
+        /// <returns></returns>
+        public ViewResult ReviewRecipe(int recipeId) => View(repository.Recipes
+            .FirstOrDefault(r => r.RecipeId == recipeId));
+
+
+        /// <summary>
+        /// This method is used to save the review (POST)
+        /// </summary>
+        /// <param name="recipe"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult ReviewRecipe(Recipe recipe)
         {
             if (ModelState.IsValid)
             {
                 repository.SaveReview(recipe);
-                // TempData["message"] = $"{product.Name} has been saved!";
+                TempData["message"] = $"{recipe.Name} has been saved!";
                 return RedirectToAction("RecipeList", controllerName: "Home");
             }
             else
@@ -92,52 +108,23 @@ namespace COMP229_F2019_Recipes.Controllers
 
 
 
+
+        //public ViewResult Create() => View("EditRecipe", new Recipe());
+
         [HttpPost]
-    public IActionResult DeleteRecipe(int recipetId)
-    {
-        Recipe deletedRecipe = repository.DeleteRecipe(recipetId);
-
-        if (deletedRecipe != null)
+        public IActionResult Delete(int recipeId)
         {
-            TempData["message"] = $"{deletedRecipe.Name} was deleted!";
+            Recipe deletedRecipe = repository.DeleteRecipe(recipeId);
+
+            if (deletedRecipe != null)
+            {
+                TempData["message"] = $"{deletedRecipe.Name} was deleted!";
+            }
+
+            return RedirectToAction("RecipeList", controllerName: "Home");
         }
 
-        return RedirectToAction("RecipeList", controllerName: "Home");
-    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /// <summary>
-        /// This method returns ReviewRecipe view (GET)
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public ViewResult ReviewRecipe(int recipeId)
-        {
-            return View(repository.Recipes
-                .Where(r => r.RecipeId == recipeId)
-                .FirstOrDefault());
-        }
-
-        /// <summary>
-        /// This method is used to save a recipe review into ReviewRecipe (POST)
-        /// </summary>
-        /// <param name="recipe"></param>
-        /// <returns></returns>
 
 
        
