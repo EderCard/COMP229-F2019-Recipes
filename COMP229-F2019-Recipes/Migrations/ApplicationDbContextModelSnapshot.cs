@@ -28,11 +28,14 @@ namespace COMP229_F2019_Recipes.Migrations
 
                     b.Property<string>("Comment");
 
-                    b.Property<string>("Directions");
+                    b.Property<string>("Directions")
+                        .IsRequired();
 
-                    b.Property<string>("Ingredients");
+                    b.Property<string>("Ingredients")
+                        .IsRequired();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<int>("Serves");
 

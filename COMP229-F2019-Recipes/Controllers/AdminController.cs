@@ -17,6 +17,7 @@ namespace COMP229_F2019_Recipes.Controllers
         }
         // default action method
         public ViewResult Index() => View(repository.Recipes);
+
         /// <summary>
         /// This method returns the AddRecipe view (GET)
         /// </summary>
@@ -26,6 +27,7 @@ namespace COMP229_F2019_Recipes.Controllers
         {
             return View();
         }
+
         /// <summary>
         /// This method is used to save the new recipe into the RecipeList (POST)
         /// </summary>
@@ -44,17 +46,19 @@ namespace COMP229_F2019_Recipes.Controllers
                 return View();
             }
         }
+
         /// <summary>
         /// This method returns the EditRecipe view
         /// </summary>
-        /// <param name="RecipeId"></param>
+        /// <param name="recipeId"></param>
         /// <returns></returns>
         public ViewResult EditRecipe(int recipeId) => View(repository.Recipes
             .FirstOrDefault(r => r.RecipeId == recipeId));
+
         /// <summary>
         /// This method is used to save changes on Recipe
         /// </summary>
-        /// <param name="product"></param>
+        /// <param name="recipe"></param>
         /// <returns></returns>
         [HttpPost]
         public IActionResult EditRecipe(Recipe recipe)
@@ -71,46 +75,32 @@ namespace COMP229_F2019_Recipes.Controllers
             }
         }
 
-
-
         /// <summary>
         /// This method returns the ReviewRecipe view
         /// </summary>
-        /// <param name="RecipeId"></param>
+        /// <param name="recipeId"></param>
         /// <returns></returns>
         public ViewResult ReviewRecipe(int recipeId) => View(repository.Recipes
             .FirstOrDefault(r => r.RecipeId == recipeId));
 
-
-        /// <summary>
-        /// This method is used to save the review (POST)
+                /// <summary>
+        /// This method is used to save the Review (POST)
         /// </summary>
         /// <param name="recipe"></param>
         /// <returns></returns>
         [HttpPost]
         public IActionResult ReviewRecipe(Recipe recipe)
         {
-            if (ModelState.IsValid)
-            {
-                repository.SaveReview(recipe);
-                TempData["message"] = $"{recipe.Name} has been saved!";
-                return RedirectToAction("RecipeList", controllerName: "Home");
-            }
-            else
-            {
-                return View(recipe);
-            }
+            repository.SaveReview(recipe);
+            TempData["message"] = $"{recipe.Name} has been saved!";
+            return RedirectToAction("RecipeList", controllerName: "Home");
         }
 
-
-
-
-
-
-
-
-        //public ViewResult Create() => View("EditRecipe", new Recipe());
-
+        /// <summary>
+        /// This method is used to delete a recipe
+        /// </summary>
+        /// <param name="recipeId"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Delete(int recipeId)
         {
@@ -123,14 +113,5 @@ namespace COMP229_F2019_Recipes.Controllers
 
             return RedirectToAction("RecipeList", controllerName: "Home");
         }
-
-
-
-
-       
-
-
-
-
     }
 }

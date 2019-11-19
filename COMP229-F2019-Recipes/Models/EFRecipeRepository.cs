@@ -14,7 +14,7 @@ namespace COMP229_F2019_Recipes.Models
             context = ctx;
         }
         public IQueryable<Recipe> Recipes => context.Recipes;
-        
+
         /// <summary>
         /// This method is used to save a recipe
         /// </summary>
@@ -59,11 +59,6 @@ namespace COMP229_F2019_Recipes.Models
             return dbEntry;
         }
 
-
-
-
-
-
         /// <summary>
         /// This method is used to save a review
         /// </summary>
@@ -80,15 +75,11 @@ namespace COMP229_F2019_Recipes.Models
                     .FirstOrDefault(r => r.RecipeId == recipe.RecipeId);
                 if (dbEntry != null)
                 {
-                    dbEntry.Name = recipe.Name;
                     dbEntry.Comment = recipe.Comment;
                 }
             }
             context.SaveChanges();
         }
-
-
-        
 
     }
 }

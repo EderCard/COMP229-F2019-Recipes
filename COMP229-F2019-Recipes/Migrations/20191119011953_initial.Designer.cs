@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace COMP229_F2019_Recipes.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191110003237_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20191119011953_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,11 +30,14 @@ namespace COMP229_F2019_Recipes.Migrations
 
                     b.Property<string>("Comment");
 
-                    b.Property<string>("Directions");
+                    b.Property<string>("Directions")
+                        .IsRequired();
 
-                    b.Property<string>("Ingredients");
+                    b.Property<string>("Ingredients")
+                        .IsRequired();
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.Property<int>("Serves");
 

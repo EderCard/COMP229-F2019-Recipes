@@ -6,7 +6,7 @@
     <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="/lib/boostrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/styles.css" />
-
+    
     <script src="/lib/jquery/jquery.min.js"></script>
     <script src="/lib/jquery-validate/jquery.validate.min.js"></script>
     <script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
@@ -21,7 +21,10 @@
             <a class="btn btn-primary" asp-action="RecipeList" asp-controller="Home">Recipe List</a>
             <a class="btn btn-primary" asp-action="AddRecipe" asp-controller="Admin">Add</a>
         </header>
-
+        @if (TempData["message"] != null)
+        {
+            <div class="alert alert-success mt-1">@TempData["message"]</div>
+        }
         @RenderBody()
 
         <footer>
