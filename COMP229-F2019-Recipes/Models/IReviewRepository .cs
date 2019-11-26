@@ -8,7 +8,7 @@ namespace COMP229_F2019_Recipes.Models
     public interface IReviewRepository
     {
         IQueryable<Review> Reviews { get; }
-        void saveReview(Review review);
-        Review deleteReview(int ReviewId);
+        void SaveReview(Review review);
+        void DeleteReview(int recipeId);
     }
 }

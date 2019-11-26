@@ -27,7 +27,7 @@ namespace COMP229_F2019_Recipes
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["Data:Recipes:ConnectionString"]));
 
             services.AddTransient<IRecipeRepository, EFRecipeRepository>();
-
+            services.AddTransient<IReviewRepository, EFReviewRepository>();
             services.AddMvc();
         }
 

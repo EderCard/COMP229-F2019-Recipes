@@ -9,35 +9,38 @@ namespace COMP229_F2019_Recipes.Controllers
 {
     public class HomeController : Controller
     {
-        private IRecipeRepository repository;
+        private IRecipeRepository recipeRepository;
 
-        public HomeController(IRecipeRepository repo)
+        public HomeController(IRecipeRepository recipeRepo)
         {
-            repository = repo;
+            recipeRepository = recipeRepo;
         }
         // default action method
         public ViewResult Index()
         {
             return View();
         }
+
         /// <summary>
-        /// This method return ViewRecipe view (GET)
-        /// </summary>
-        /// <returns></returns>
-        public ViewResult ViewRecipe(int RecipeId)
-        {
-            return View(repository.Recipes
-                .Where(r => r.RecipeId == RecipeId)
-                .FirstOrDefault());
-        }
-        /// <summary>
-        /// This method returns RecipeList view
+        /// This method returns RecipeList view (GET)
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         public ViewResult RecipeList()
         {
-            return View(repository.Recipes);
+            return View(recipeRepository.Recipes);
+        }
+
+        /// <summary>
+        /// This method returns ViewRecipe view (GET)
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ViewResult ViewRecipe(int RecipeId)
+        {
+            return View(recipeRepository.Recipes
+                .Where(r => r.RecipeId == RecipeId)
+                .FirstOrDefault());
         }
 
     }

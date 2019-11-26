@@ -43,6 +43,23 @@ namespace COMP229_F2019_Recipes.Migrations
 
                     b.ToTable("Recipes");
                 });
+
+            modelBuilder.Entity("COMP229_F2019_Recipes.Models.Review", b =>
+                {
+                    b.Property<int>("ReviewId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comment");
+
+                    b.Property<int>("Rate");
+
+                    b.Property<int>("RecipeId");
+
+                    b.HasKey("ReviewId");
+
+                    b.ToTable("Reviews");
+                });
 #pragma warning restore 612, 618
         }
     }

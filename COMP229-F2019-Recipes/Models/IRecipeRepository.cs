@@ -9,7 +9,6 @@ namespace COMP229_F2019_Recipes.Models
     {
         IQueryable<Recipe> Recipes { get; }
         void SaveRecipe(Recipe recipe);
-        void SaveReview(Recipe recipe);
         Recipe DeleteRecipe(int recipeId);
     }
 }
