@@ -4,9 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using COMP229_F2019_Recipes.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace COMP229_F2019_Recipes.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private IRecipeRepository recipeRepository;

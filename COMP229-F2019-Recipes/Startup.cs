@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using COMP229_F2019_Recipes.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace COMP229_F2019_Recipes
 {
@@ -26,6 +27,12 @@ namespace COMP229_F2019_Recipes
         {
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration["Data:Recipes:ConnectionString"]));
 
+            services.AddDbContext<AppIdentityDbContext>(options => options.UseSqlServer(Configuration["Data:RecipeIdentity:ConnectionString"]));
+
+            services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<AppIdentityDbContext>()
+                .AddDefaultTokenProviders();
+
             services.AddTransient<IRecipeRepository, EFRecipeRepository>();
             services.AddTransient<IReviewRepository, EFReviewRepository>();
             services.AddMvc();
@@ -41,15 +48,16 @@ namespace COMP229_F2019_Recipes
 
             //wwwroot folder
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseMvcWithDefaultRoute();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute("default", "{controller=Home}/{action=ViewRecipe}/{id?}");
-            });
+            //app.UseMvc(routes =>
+            //{
+                //routes.MapRoute("default", "{controller=Home}/{action=ViewRecipe}/{id?}");
+            //});
             
             SeedData.EnsurePopulated(app);
+            IdentitySeedData.EnsurePopulated(app);
         }
     }
 }
