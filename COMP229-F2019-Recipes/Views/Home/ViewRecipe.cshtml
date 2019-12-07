@@ -1,62 +1,67 @@
 ﻿@model Recipe
 @{
-     ViewBag.Title = "View Recipe";
+     ViewBag.Title = "Recipe Details";
 
 }
-        <div class="panel panel-success">
-            <div class="panel-body">
+    <div class="panel panel-success">
+        <div class="panel-body">
 
-                <form class="p-3" asp-action="AddRecipe" method="post">
-                    <div asp-validation-summary="All"></div>
+            <form class="p-3" asp-action="AddRecipe" method="post">
+                <div asp-validation-summary="All"></div>
 
-                    <div class="form-row">
-                        <div class="form-group  col-md-1">
-                            <label asp-for="RecipeId">Id</label>
-                            <input class="form-control" asp-for="RecipeId" disabled="disabled"/>
-                        </div>
-                        <div class="form-group  col-md-11">
-                            <label asp-for="Name">Name</label>
-                            <input class="form-control" asp-for="Name" disabled="disabled"/>
-                        </div>
+                <div class="form-row">
+                    <div class="form-group  col-md-1">
+                        <label asp-for="RecipeId">Id</label>
+                        <input class="form-control" asp-for="RecipeId" disabled="disabled" />
+                    </div>
+                    <div class="form-group  col-md-11">
+                        <label asp-for="Name">Name</label>
+                        <input class="form-control" asp-for="Name" disabled="disabled" />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-10">
+                        <label asp-for="Category">Category</label>
+                        <select class="form-control" asp-for="Category" disabled="disabled">
+                            <option value="">--Select--</option>
+                            <option value=1>Desserts</option>
+                            <option value=2>Main Dishes</option>
+                            <option value=3>Miscellaneous</option>
+                        </select>
                     </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-10">
-                            <label asp-for="Category">Category</label>
-                            <select class="form-control" asp-for="Category" disabled="disabled">
-                                <option value="">--Select--</option>
-                                <option value=1>Desserts</option>
-                                <option value=2>Main Dishes</option>
-                                <option value=3>Miscellaneous</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group col-md-2">
-                            <label asp-for="Serves">Serves</label>
-                            <select class="form-control" asp-for="Serves" disabled="disabled">
-                                <option value="">--Select--</option>
-                                <option value=1>1</option>
-                                <option value=2>2 </option>
-                                <option value=3>3</option>
-                                <option value=4>4</option>
-                                <option value=5>5</option>
-                                <option value=6>6</option>
-                                <option value=7>7</option>
-                                <option value=8>8</option>
-                            </select>
-                        </div>
+                    <div class="form-group col-md-2">
+                        <label asp-for="Serves">Serves</label>
+                        <select class="form-control" asp-for="Serves" disabled="disabled">
+                            <option value="">--Select--</option>
+                            <option value=1>1</option>
+                            <option value=2>2 </option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                            <option value=5>5</option>
+                            <option value=6>6</option>
+                            <option value=7>7</option>
+                            <option value=8>8</option>
+                        </select>
                     </div>
+                </div>
 
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label asp-for="Ingredients">Ingredients</label>
-                            <textarea class="form-control" rows="10" asp-for="Ingredients" disabled="disabled"></textarea>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label asp-for="Directions">Directions</label>
-                            <textarea class="form-control" rows="10" asp-for="Directions" disabled="disabled"></textarea>
-                        </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label asp-for="Ingredients">Ingredients</label>
+                        <textarea class="form-control" rows="10" asp-for="Ingredients" disabled="disabled"></textarea>
                     </div>
-                </form>
-            </div>
+                    <div class="form-group col-md-6">
+                        <label asp-for="Directions">Directions</label>
+                        <textarea class="form-control" rows="10" asp-for="Directions" disabled="disabled"></textarea>
+                    </div>
+                </div>
+
+                <div class="text-right">
+                    <a class="btn btn-primary" asp-action="AddReview" asp-route-RecipeId=@Model.RecipeId asp-controller="Review">Add Review</a>
+                </div>
+
+            </form>
         </div>
+    </div>

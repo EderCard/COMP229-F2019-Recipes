@@ -9,14 +9,14 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace COMP229_F2019_Recipes.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191119011953_initial")]
-    partial class initial
+    [Migration("20191130234416_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.2.1-servicing-10028")
+                .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -44,6 +44,23 @@ namespace COMP229_F2019_Recipes.Migrations
                     b.HasKey("RecipeId");
 
                     b.ToTable("Recipes");
+                });
+
+            modelBuilder.Entity("COMP229_F2019_Recipes.Models.Review", b =>
+                {
+                    b.Property<int>("ReviewId")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comment");
+
+                    b.Property<int>("Rate");
+
+                    b.Property<int>("RecipeId");
+
+                    b.HasKey("ReviewId");
+
+                    b.ToTable("Reviews");
                 });
 #pragma warning restore 612, 618
         }

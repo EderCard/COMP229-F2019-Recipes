@@ -42,44 +42,25 @@ namespace COMP229_F2019_Recipes.Models
         }
 
         /// <summary>
-        /// This method is used to delete a recipe
+        /// This method is used to delete a recipe and it's reviews
         /// </summary>
         /// <param name="recipeId"></param>
         /// <returns></returns>
         public Recipe DeleteRecipe(int recipeId)
         {
+            EFReviewRepository efReviewRepository = new EFReviewRepository(context);
+            efReviewRepository.DeleteReview(recipeId);
+
             Recipe dbEntry = context.Recipes
                 .FirstOrDefault(r => r.RecipeId == recipeId);
-
+            
             if (dbEntry != null)
             {
                 context.Recipes.Remove(dbEntry);
+
                 context.SaveChanges();
             }
             return dbEntry;
         }
-
-        /// <summary>
-        /// This method is used to save a review
-        /// </summary>
-        /// <param name="recipe"></param>
-        public void SaveReview(Recipe recipe)
-        {
-            if (recipe.RecipeId == 0)
-            {
-                context.Recipes.Add(recipe);
-            }
-            else
-            {
-                Recipe dbEntry = context.Recipes
-                    .FirstOrDefault(r => r.RecipeId == recipe.RecipeId);
-                if (dbEntry != null)
-                {
-                    dbEntry.Comment = recipe.Comment;
-                }
-            }
-            context.SaveChanges();
-        }
-
     }
 }

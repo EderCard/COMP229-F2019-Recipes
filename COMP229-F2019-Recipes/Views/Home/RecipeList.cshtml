@@ -1,4 +1,4 @@
-﻿@model  IQueryable<Recipe>
+﻿@model IQueryable<Recipe>
 
 @{
     ViewBag.Title = "Recipe List";
@@ -69,9 +69,10 @@
                         <input type="hidden" name="RecipeId" value="@r.RecipeId" />
                         <a class="btn btn-primary" asp-action="ViewRecipe" asp-route-RecipeId=@r.RecipeId asp-controller="Home">View</a>
                         <a class="btn btn-warning" asp-action="EditRecipe" asp-route-RecipeId=@r.RecipeId asp-controller="Admin">Edit</a>
-                        <a class="btn btn-primary" asp-action="ReviewRecipe" asp-route-RecipeId=@r.RecipeId asp-controller="Admin">Review</a>
+                        <a class="btn btn-primary" asp-action="AddReview" asp-route-RecipeId=@r.RecipeId asp-controller="Review">Add Review</a>
+                        <a class="btn btn-primary" asp-action="ReviewList" asp-route-RecipeId=@r.RecipeId asp-controller="Review">List Reviews</a>
                         <button type="submit" class="btn btn-danger">Delete</button>
-                    </form> 
+                    </form>
                 </td>
             </tr>
         }

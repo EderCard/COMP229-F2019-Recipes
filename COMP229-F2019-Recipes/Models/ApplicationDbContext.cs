@@ -11,5 +11,6 @@ namespace COMP229_F2019_Recipes.Models
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
         public DbSet<Recipe> Recipes { get; set; }
+        public DbSet<Review> Reviews { get; set; }
     }
 }
