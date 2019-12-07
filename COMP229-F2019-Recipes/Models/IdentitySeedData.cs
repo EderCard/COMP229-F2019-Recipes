@@ -80,7 +80,6 @@ namespace COMP229_F2019_Recipes.Models
                     await userManager.AddToRoleAsync(managerUserIdentity, managerRoleName);
                 }
             }
-
         }
     }
 }
