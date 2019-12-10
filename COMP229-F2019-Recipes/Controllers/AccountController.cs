@@ -45,7 +45,7 @@ namespace COMP229_F2019_Recipes.Controllers
                     if ((await signInManager.PasswordSignInAsync(user,
                         loginModel.Password, false, false)).Succeeded)
                     {
-                        return Redirect(loginModel?.ReturnUrl ?? "/Admin/Index");
+                        return Redirect(loginModel?.ReturnUrl ?? "/Home/RecipeList");
                     }
 
                 }
