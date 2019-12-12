@@ -18,7 +18,7 @@ namespace COMP229_F2019_Recipes.Controllers
             recipeRepository = recipeRepo;
         }
         // default action method
-        public ViewResult Index() => View(recipeRepository.Recipes);
+        //public ViewResult Index() => View(recipeRepository.Recipes);
 
         /// <summary>
         /// This method returns the AddRecipe view (GET)
