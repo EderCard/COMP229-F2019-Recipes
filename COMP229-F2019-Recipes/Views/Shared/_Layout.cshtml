@@ -19,16 +19,14 @@
             <h2>Welcome to the best recipes list you have ever seen!</h2>
             <a class="btn btn-primary" asp-action="Index" asp-controller="Home">Home</a>
             <a class="btn btn-primary" asp-action="RecipeList" asp-controller="Home">Recipe List</a>
-            @*<a class="btn btn-primary" asp-action="AddRecipe" asp-controller="Admin">Add Recipe</a>*@
             @if (!User.Identity.IsAuthenticated)
             {
-                <a class="btn btn-primary" asp-action="Login" asp-controller="Account">Login</a>
+                <a class="btn btn-primary" asp-action="Login" asp-controller="Account">Admin</a>
             }
             @if (User.Identity.IsAuthenticated)
             {
                 <a class="btn btn-primary" asp-action="AddRecipe" asp-controller="Admin">Add Recipe</a>
-                <a class="btn btn-primary"
-                   asp-action="Logout" asp-controller="Account">Log Out</a>
+                <a class="btn btn-primary" asp-action="Logout" asp-controller="Account">Log Out</a>
                 <br />
             }
         </header>
@@ -37,7 +35,6 @@
             <div class="alert alert-success mt-1">@TempData["message"]</div>
         }
         @RenderBody()
-
         <footer>
             <p id="copyright">
                 &copy;&nbsp;&nbsp;Copyright Ederson Cardoso - Comp229 - Fall 2019 - Group Project

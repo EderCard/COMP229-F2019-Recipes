@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Recipe List";
 }
-
+<br />
     <table class="table table-sm table-bordered table-hover">
         <thead class="thead-light">
             <tr>
@@ -23,7 +23,7 @@
                     <td>@r.Name</td>
                     <td>
                         @switch (r.Category)
-                        {
+                         {
                             case 1:
                                 @: Desserts
                                 break;
@@ -33,7 +33,7 @@
                             case 3:
                                 @: Miscellaneous
                                 break;
-                        }
+                         }
                     </td>
                     <td>
                         @switch (r.Serves)
@@ -71,10 +71,10 @@
                             <a class="btn btn-primary" asp-action="AddReview" asp-route-RecipeId=@r.RecipeId asp-controller="Review">Add Review</a>
                             <a class="btn btn-primary" asp-action="ReviewList" asp-route-RecipeId=@r.RecipeId asp-controller="Review">List Reviews</a>
                             @if (User.Identity.IsAuthenticated)
-                            {
+                             {
                                 <a class="btn btn-warning" asp-action="EditRecipe" asp-route-RecipeId=@r.RecipeId asp-controller="Admin">Edit</a>
                                 <button type="submit" class="btn btn-danger">Delete</button>
-                            }
+                             }
                         </form>
                     </td>
                 </tr>

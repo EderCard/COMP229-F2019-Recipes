@@ -129,13 +129,13 @@ namespace COMP229_F2019_Recipes.Models
                 {
                     Comment = "Very Good",
                     Rate = 4,
-                    RecipeId = 5
+                    RecipeId = 4
                 },
                 new Review
                 {
                     Comment = "Like this recipe",
-                    Rate = 4,
-                    RecipeId = 5
+                    Rate = 5,
+                    RecipeId = 4
                 });
                 context.SaveChanges();
             }
